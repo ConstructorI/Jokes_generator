@@ -3,10 +3,8 @@ import time
 
 import numpy as np
 
-from gradio_client import Client, handle_file
-from PySide6 import QtWidgets
-from PySide6.QtWidgets import QApplication, QMainWindow, QHeaderView
-from PySide6.QtSql import QSqlTableModel
+from gradio_client import Client
+from PySide6.QtWidgets import QApplication, QMainWindow
 from PySide6.QtGui import QPixmap
 
 from MainWindow import Ui_MainWindow
@@ -22,6 +20,7 @@ class MainWindow(QMainWindow):
         self.q_num = 1
         self.ans_num = 1
         self.history = {'user': "Отвечай на русском языке"}
+        self.history_text = ""
 
         self.main_action()
 
@@ -36,6 +35,7 @@ class MainWindow(QMainWindow):
 
     def clearhistory(self):
         self.history = {}
+        self.history_text = ""
         self.ui_main.plainTextEdit_2.clear()
         self.q_num = 1
         self.ans_num = 1
@@ -70,7 +70,9 @@ class MainWindow(QMainWindow):
         self.ui_main.plainTextEdit_3.clear()
         self.history['qwen2_answer#'+str(self.ans_num)] = result
         self.ans_num += 1
-        self.ui_main.plainTextEdit_2.insertPlainText("\n\nПользователь:\n" + query + '\n\nAI:\n' + result)
+        self.history_text += "\n\nПользователь:\n" + query + '\n\nAI:\n' + result
+        self.ui_main.plainTextEdit_2.clear()
+        self.ui_main.plainTextEdit_2.setPlainText(str(self.history_text))
         self.ui_main.label_3.setHidden(True)
         self.ui_main.pushButton_2.setHidden(False)
 
