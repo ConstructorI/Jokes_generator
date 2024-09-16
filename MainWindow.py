@@ -54,12 +54,28 @@ class Ui_MainWindow(object):
 
         self.verticalLayout.addWidget(self.widget)
 
+        self.horizontalLayout_3 = QHBoxLayout()
+        self.horizontalLayout_3.setSpacing(5)
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
         self.lineEdit_2 = QLineEdit(self.tab)
         self.lineEdit_2.setObjectName(u"lineEdit_2")
-        self.lineEdit_2.setMinimumSize(QSize(512, 0))
+        self.lineEdit_2.setMinimumSize(QSize(0, 0))
         self.lineEdit_2.setReadOnly(True)
 
-        self.verticalLayout.addWidget(self.lineEdit_2)
+        self.horizontalLayout_3.addWidget(self.lineEdit_2)
+
+        self.pushButton_5 = QPushButton(self.tab)
+        self.pushButton_5.setObjectName(u"pushButton_5")
+        sizePolicy = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.pushButton_5.sizePolicy().hasHeightForWidth())
+        self.pushButton_5.setSizePolicy(sizePolicy)
+
+        self.horizontalLayout_3.addWidget(self.pushButton_5)
+
+
+        self.verticalLayout.addLayout(self.horizontalLayout_3)
 
         self.plainTextEdit = QPlainTextEdit(self.tab)
         self.plainTextEdit.setObjectName(u"plainTextEdit")
@@ -70,12 +86,13 @@ class Ui_MainWindow(object):
 
         self.pushButton = QPushButton(self.tab)
         self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setMinimumSize(QSize(120, 25))
+        self.pushButton.setMinimumSize(QSize(512, 25))
 
         self.verticalLayout.addWidget(self.pushButton)
 
         self.label_2 = QLabel(self.tab)
         self.label_2.setObjectName(u"label_2")
+        self.label_2.setMinimumSize(QSize(512, 0))
         self.label_2.setMaximumSize(QSize(16777215, 24))
         self.label_2.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
@@ -101,6 +118,7 @@ class Ui_MainWindow(object):
 
         self.pushButton_2 = QPushButton(self.tab_2)
         self.pushButton_2.setObjectName(u"pushButton_2")
+        self.pushButton_2.setMinimumSize(QSize(512, 30))
 
         self.verticalLayout_2.addWidget(self.pushButton_2)
 
@@ -113,6 +131,7 @@ class Ui_MainWindow(object):
 
         self.pushButton_3 = QPushButton(self.tab_2)
         self.pushButton_3.setObjectName(u"pushButton_3")
+        self.pushButton_3.setMinimumSize(QSize(512, 25))
 
         self.verticalLayout_2.addWidget(self.pushButton_3)
 
@@ -166,6 +185,7 @@ class Ui_MainWindow(object):
 
         self.pushButton_4 = QPushButton(self.tab_3)
         self.pushButton_4.setObjectName(u"pushButton_4")
+        self.pushButton_4.setMinimumSize(QSize(0, 0))
 
         self.verticalLayout_3.addWidget(self.pushButton_4)
 
@@ -185,7 +205,8 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Jokes_generator", None))
-        self.label.setText(QCoreApplication.translate("MainWindow", u"\u0417\u0434\u0435\u0441\u044c \u0431\u0443\u0434\u0435\u0442 \u0438\u0437\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u0435", None))
+        self.label.setText(QCoreApplication.translate("MainWindow", u"\u0417\u0434\u0435\u0441\u044c \u0431\u0443\u0434\u0435\u0442 \u0438\u0437\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u0435. \u0412\u043e \u0432\u0440\u0435\u043c\u044f \u0433\u0435\u043d\u0435\u0440\u0430\u0446\u0438\u0438 \u043f\u0440\u043e\u0433\u0430 \u043f\u043e\u0434\u0432\u0438\u0441\u043d\u0435\u0442 \u043d\u0430 \u0432\u0440\u0435\u043c\u044f (\u0441\u0435\u043a\u0443\u043d\u0434 5-10).", None))
+        self.pushButton_5.setText(QCoreApplication.translate("MainWindow", u"\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0438\u0437\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u0435", None))
         self.plainTextEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0437\u0430\u043f\u0440\u043e\u0441...", None))
         self.pushButton.setText(QCoreApplication.translate("MainWindow", u"\u041d\u0430\u0447\u0430\u0442\u044c \u0433\u0435\u043d\u0435\u0440\u0430\u0446\u0438\u044e", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"\u041e\u0436\u0438\u0434\u0430\u0439\u0442\u0435", None))
@@ -195,7 +216,7 @@ class Ui_MainWindow(object):
         self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"\u041e\u0436\u0438\u0434\u0430\u0439\u0442\u0435", None))
         self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"\u041e\u0447\u0438\u0441\u0442\u0438\u0442\u044c \u0438\u0441\u0442\u043e\u0440\u0438\u044e", None))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), QCoreApplication.translate("MainWindow", u"\u0413\u0435\u043d\u0435\u0440\u0430\u0446\u0438\u044f \u0442\u0435\u043a\u0441\u0442\u0430", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), QCoreApplication.translate("MainWindow", u"\u041e\u0431\u0449\u0435\u043d\u0438\u0435 \u0441 \u0418\u0418", None))
         self.plainTextEdit_4.setPlaceholderText(QCoreApplication.translate("MainWindow", u"\u0417\u0434\u0435\u0441\u044c \u0431\u0443\u0434\u0435\u0442 \u0441\u043b\u0443\u0447\u0430\u0439\u043d\u044b\u0439 \u0442\u0435\u043a\u0441\u0442. \u0414\u043b\u044f \u043d\u0430\u0438\u043b\u0443\u0447\u0448\u0438\u0445 \u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u043e\u0432 \u043f\u0440\u0435\u0434\u043b\u043e\u0436\u0435\u043d\u0438\u044f \u0432 \u0444\u0430\u0439\u043b\u0435 \u0441\u043b\u0435\u0434\u0443\u0435\u0442 \u0440\u0430\u0437\u0434\u0435\u043b\u0438\u0442\u044c \u043f\u043e\u0441\u0442\u0440\u043e\u0447\u043d\u043e.", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u0444\u0430\u0439\u043b\u0430:", None))
         self.lineEdit.setText(QCoreApplication.translate("MainWindow", u"\u043f\u0440\u043e\u043a\u043b\u044f\u0442\u043e\u0435.txt", None))
