@@ -2,7 +2,6 @@ import sys
 import time
 
 import numpy as np
-
 from gradio_client import Client
 from PySide6.QtWidgets import QApplication, QMainWindow
 from PySide6.QtGui import QPixmap
