@@ -81,30 +81,12 @@
          </widget>
         </item>
         <item>
-         <widget class="QTextEdit" name="textEdit">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
+         <widget class="QLineEdit" name="lineEdit_2">
           <property name="minimumSize">
            <size>
             <width>512</width>
             <height>0</height>
            </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>24</height>
-           </size>
-          </property>
-          <property name="verticalScrollBarPolicy">
-           <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
-          </property>
-          <property name="horizontalScrollBarPolicy">
-           <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
           </property>
           <property name="readOnly">
            <bool>true</bool>
@@ -173,6 +155,9 @@
             <width>512</width>
             <height>470</height>
            </size>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
           </property>
           <property name="placeholderText">
            <string>Здесь будет отображаться история</string>
@@ -259,6 +244,9 @@
               <height>20</height>
              </size>
             </property>
+            <property name="text">
+             <string>проклятое.txt</string>
+            </property>
             <property name="alignment">
              <set>Qt::AlignmentFlag::AlignCenter</set>
             </property>
@@ -290,7 +278,7 @@
              </size>
             </property>
             <property name="minimum">
-             <number>1</number>
+             <number>2</number>
             </property>
             <property name="maximum">
              <number>9999</number>
