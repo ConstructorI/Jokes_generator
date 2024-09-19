@@ -30,7 +30,7 @@
        </size>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -70,7 +70,7 @@
            <item row="0" column="0">
             <widget class="QLabel" name="label">
              <property name="text">
-              <string>Здесь будет изображение. Во время генерации прога подвиснет на время (секунд 5-10).</string>
+              <string>Здесь будет изображение</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignmentFlag::AlignCenter</set>
