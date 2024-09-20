@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>549</width>
-    <height>730</height>
+    <height>732</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -19,6 +19,71 @@
   <property name="windowTitle">
    <string>Jokes_generator</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="res.qrc">
+    <normaloff>:/icon/flower.ico</normaloff>:/icon/flower.ico</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget {
+	font: 8pt &quot;Bahnschrift&quot;;
+	color: rgb(60, 66, 92);
+	background-color: rgb(228, 255, 194);
+}
+
+QFrame {
+	color: rgb(60, 66, 92);
+	background-color: rgba(255, 255, 255, 70);
+	border: none;
+}
+
+QLineEdit {
+	border: 1px solid rgb(255, 192, 133);
+	border-radius: 3px;
+	color: rgb(60, 66, 92);
+	background-color: rgb(161, 204, 210);
+}
+
+QLineEdit:hover {
+	border: 2px solid rgba(255, 192, 133, 70);
+}
+
+QLineEdit:focus {
+	border: 2px solid rgb(255, 192, 133);
+}
+
+QPushButton {
+	font: 12pt &quot;Bahnschrift&quot;;
+	border-radius: 3px;
+	color: rgb(60, 66, 92);
+	background-color: rgb(255, 192, 133);
+}
+
+QPushButton:hover {
+	font: 12pt &quot;Bahnschrift&quot;;
+	border: 1px solid rgb(172, 255, 120);
+	border-radius: 3px;
+	color: rgb(60, 66, 92);
+	background-color: rgb(255, 192, 133);
+}
+
+QPushButton:pressed {
+	font: 12pt &quot;Bahnschrift&quot;;
+	color: rgb(60, 66, 92);
+	border: 2px solid rgb(172, 255, 120);
+	background-color: rgb(172, 255, 120);
+}
+
+QPlainTextEdit {
+	font: 10pt &quot;Bahnschrift&quot;;
+    background-color:rgb(228, 255, 194);color:rgb(60, 66, 92);border:1px;border-style:solid;border-color:rgb(255, 192, 133);border-radius: 3px;
+}
+
+QPlainTextEdit:focus {
+	font: 10pt &quot;Bahnschrift&quot;;
+    background-color:rgb(228, 255, 194);color:rgb(60, 66, 92);border:2px;border-style:solid;border-color:rgb(255, 192, 133);border-radius: 3px;
+}
+</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout_2">
     <item row="0" column="1">
@@ -29,8 +94,37 @@
         <height>712</height>
        </size>
       </property>
+      <property name="styleSheet">
+       <string notr="true">QTabBar::tab:selected {background: rgb(255, 192, 133);}
+QTabBar::tab {background: rgba(255, 255, 255, 70);}
+</string>
+      </property>
+      <property name="tabPosition">
+       <enum>QTabWidget::TabPosition::North</enum>
+      </property>
+      <property name="tabShape">
+       <enum>QTabWidget::TabShape::Rounded</enum>
+      </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
+      </property>
+      <property name="elideMode">
+       <enum>Qt::TextElideMode::ElideLeft</enum>
+      </property>
+      <property name="usesScrollButtons">
+       <bool>true</bool>
+      </property>
+      <property name="documentMode">
+       <bool>true</bool>
+      </property>
+      <property name="tabsClosable">
+       <bool>false</bool>
+      </property>
+      <property name="movable">
+       <bool>true</bool>
+      </property>
+      <property name="tabBarAutoHide">
+       <bool>false</bool>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -93,6 +187,14 @@
               <height>0</height>
              </size>
             </property>
+            <property name="focusPolicy">
+             <enum>Qt::FocusPolicy::NoFocus</enum>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 10pt &quot;Bahnschrift&quot;;
+border: none;
+background-color: rgba(255, 255, 255, 70);</string>
+            </property>
             <property name="readOnly">
              <bool>true</bool>
             </property>
@@ -105,6 +207,12 @@
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>20</height>
+             </size>
             </property>
             <property name="text">
              <string>Копировать изображение</string>
@@ -143,6 +251,9 @@
           <property name="text">
            <string>Начать генерацию</string>
           </property>
+          <property name="flat">
+           <bool>false</bool>
+          </property>
          </widget>
         </item>
         <item>
@@ -150,7 +261,7 @@
           <property name="minimumSize">
            <size>
             <width>512</width>
-            <height>0</height>
+            <height>24</height>
            </size>
           </property>
           <property name="maximumSize">
@@ -158,6 +269,11 @@
             <width>16777215</width>
             <height>24</height>
            </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font: 10pt &quot;Bahnschrift&quot;;
+background-color: none;
+border: none;</string>
           </property>
           <property name="text">
            <string>Ожидайте</string>
@@ -181,6 +297,9 @@
             <width>512</width>
             <height>470</height>
            </size>
+          </property>
+          <property name="focusPolicy">
+           <enum>Qt::FocusPolicy::NoFocus</enum>
           </property>
           <property name="readOnly">
            <bool>true</bool>
@@ -218,11 +337,22 @@
         </item>
         <item>
          <widget class="QLabel" name="label_3">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>24</height>
+           </size>
+          </property>
           <property name="maximumSize">
            <size>
             <width>16777215</width>
             <height>24</height>
            </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font: 10pt &quot;Bahnschrift&quot;;
+background-color: none;
+border: none;</string>
           </property>
           <property name="text">
            <string>Ожидайте</string>
@@ -254,6 +384,9 @@
        <layout class="QVBoxLayout" name="verticalLayout_3">
         <item>
          <widget class="QPlainTextEdit" name="plainTextEdit_4">
+          <property name="focusPolicy">
+           <enum>Qt::FocusPolicy::ClickFocus</enum>
+          </property>
           <property name="placeholderText">
            <string>Здесь будет случайный текст. Для наилучших результатов предложения в файле следует разделить построчно.</string>
           </property>
@@ -269,6 +402,11 @@
               <height>20</height>
              </size>
             </property>
+            <property name="styleSheet">
+             <string notr="true">font: 10pt &quot;Bahnschrift&quot;;
+background-color: none;
+border: none;</string>
+            </property>
             <property name="text">
              <string>Название файла:</string>
             </property>
@@ -281,6 +419,10 @@
               <width>16777215</width>
               <height>20</height>
              </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 10pt &quot;Bahnschrift&quot;;
+background-color: rgba(255, 255, 255, 70);</string>
             </property>
             <property name="text">
              <string>проклятое.txt</string>
@@ -302,6 +444,11 @@
               <height>20</height>
              </size>
             </property>
+            <property name="styleSheet">
+             <string notr="true">font: 10pt &quot;Bahnschrift&quot;;
+background-color: none;
+border: none;</string>
+            </property>
             <property name="text">
              <string>Количество слов:</string>
             </property>
@@ -314,6 +461,11 @@
               <width>70</width>
               <height>20</height>
              </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 10pt &quot;Bahnschrift&quot;;
+border: none;
+background-color: rgba(255, 255, 255, 70);</string>
             </property>
             <property name="minimum">
              <number>2</number>
@@ -333,7 +485,7 @@
           <property name="minimumSize">
            <size>
             <width>0</width>
-            <height>0</height>
+            <height>25</height>
            </size>
           </property>
           <property name="text">
@@ -348,6 +500,8 @@
    </layout>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="res.qrc"/>
+ </resources>
  <connections/>
 </ui>

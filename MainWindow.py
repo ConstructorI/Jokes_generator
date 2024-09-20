@@ -19,13 +19,77 @@ from PySide6.QtWidgets import (QApplication, QGridLayout, QHBoxLayout, QLabel,
     QLineEdit, QMainWindow, QPlainTextEdit, QPushButton,
     QSizePolicy, QSpinBox, QTabWidget, QVBoxLayout,
     QWidget)
+import res as res_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(549, 730)
+        MainWindow.resize(549, 732)
         MainWindow.setMinimumSize(QSize(549, 730))
+        icon = QIcon()
+        icon.addFile(u":/icon/flower.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        MainWindow.setWindowIcon(icon)
+        MainWindow.setStyleSheet(u"QWidget {\n"
+"	font: 8pt \"Bahnschrift\";\n"
+"	color: rgb(60, 66, 92);\n"
+"	background-color: rgb(228, 255, 194);\n"
+"}\n"
+"\n"
+"QFrame {\n"
+"	color: rgb(60, 66, 92);\n"
+"	background-color: rgba(255, 255, 255, 70);\n"
+"	border: none;\n"
+"}\n"
+"\n"
+"QLineEdit {\n"
+"	border: 1px solid rgb(255, 192, 133);\n"
+"	border-radius: 3px;\n"
+"	color: rgb(60, 66, 92);\n"
+"	background-color: rgb(161, 204, 210);\n"
+"}\n"
+"\n"
+"QLineEdit:hover {\n"
+"	border: 2px solid rgba(255, 192, 133, 70);\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"	border: 2px solid rgb(255, 192, 133);\n"
+"}\n"
+"\n"
+"QPushButton {\n"
+"	font: 12pt \"Bahnschrift\";\n"
+"	border-radius: 3px;\n"
+"	color: rgb(60, 66, 92);\n"
+"	background-color: rgb(255, 192, 133);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"	font: 12pt \"Bahnschrift\";\n"
+"	border: 1px solid rgb(172, 255, 120);\n"
+"	border-radius: 3px;\n"
+"	color: rgb(60, 66, 92);\n"
+"	background-color: rgb(255, 192, 133);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	font: 12pt \"Bahnschrift\";\n"
+"	color: rgb(60, 66, 92);\n"
+""
+                        "	border: 2px solid rgb(172, 255, 120);\n"
+"	background-color: rgb(172, 255, 120);\n"
+"}\n"
+"\n"
+"QPlainTextEdit {\n"
+"	font: 10pt \"Bahnschrift\";\n"
+"    background-color:rgb(228, 255, 194);color:rgb(60, 66, 92);border:1px;border-style:solid;border-color:rgb(255, 192, 133);border-radius: 3px;\n"
+"}\n"
+"\n"
+"QPlainTextEdit:focus {\n"
+"	font: 10pt \"Bahnschrift\";\n"
+"    background-color:rgb(228, 255, 194);color:rgb(60, 66, 92);border:2px;border-style:solid;border-color:rgb(255, 192, 133);border-radius: 3px;\n"
+"}\n"
+"")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.gridLayout_2 = QGridLayout(self.centralwidget)
@@ -33,6 +97,17 @@ class Ui_MainWindow(object):
         self.tabWidget = QTabWidget(self.centralwidget)
         self.tabWidget.setObjectName(u"tabWidget")
         self.tabWidget.setMinimumSize(QSize(532, 712))
+        self.tabWidget.setStyleSheet(u"QTabBar::tab:selected {background: rgb(255, 192, 133);}\n"
+"QTabBar::tab {background: rgba(255, 255, 255, 70);}\n"
+"")
+        self.tabWidget.setTabPosition(QTabWidget.TabPosition.North)
+        self.tabWidget.setTabShape(QTabWidget.TabShape.Rounded)
+        self.tabWidget.setElideMode(Qt.TextElideMode.ElideLeft)
+        self.tabWidget.setUsesScrollButtons(True)
+        self.tabWidget.setDocumentMode(True)
+        self.tabWidget.setTabsClosable(False)
+        self.tabWidget.setMovable(True)
+        self.tabWidget.setTabBarAutoHide(False)
         self.tab = QWidget()
         self.tab.setObjectName(u"tab")
         self.verticalLayout = QVBoxLayout(self.tab)
@@ -60,6 +135,10 @@ class Ui_MainWindow(object):
         self.lineEdit_2 = QLineEdit(self.tab)
         self.lineEdit_2.setObjectName(u"lineEdit_2")
         self.lineEdit_2.setMinimumSize(QSize(0, 0))
+        self.lineEdit_2.setFocusPolicy(Qt.FocusPolicy.NoFocus)
+        self.lineEdit_2.setStyleSheet(u"font: 10pt \"Bahnschrift\";\n"
+"border: none;\n"
+"background-color: rgba(255, 255, 255, 70);")
         self.lineEdit_2.setReadOnly(True)
 
         self.horizontalLayout_3.addWidget(self.lineEdit_2)
@@ -71,6 +150,7 @@ class Ui_MainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.pushButton_5.sizePolicy().hasHeightForWidth())
         self.pushButton_5.setSizePolicy(sizePolicy)
+        self.pushButton_5.setMinimumSize(QSize(0, 20))
 
         self.horizontalLayout_3.addWidget(self.pushButton_5)
 
@@ -87,13 +167,17 @@ class Ui_MainWindow(object):
         self.pushButton = QPushButton(self.tab)
         self.pushButton.setObjectName(u"pushButton")
         self.pushButton.setMinimumSize(QSize(512, 25))
+        self.pushButton.setFlat(False)
 
         self.verticalLayout.addWidget(self.pushButton)
 
         self.label_2 = QLabel(self.tab)
         self.label_2.setObjectName(u"label_2")
-        self.label_2.setMinimumSize(QSize(512, 0))
+        self.label_2.setMinimumSize(QSize(512, 24))
         self.label_2.setMaximumSize(QSize(16777215, 24))
+        self.label_2.setStyleSheet(u"font: 10pt \"Bahnschrift\";\n"
+"background-color: none;\n"
+"border: none;")
         self.label_2.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout.addWidget(self.label_2)
@@ -106,6 +190,7 @@ class Ui_MainWindow(object):
         self.plainTextEdit_2 = QPlainTextEdit(self.tab_2)
         self.plainTextEdit_2.setObjectName(u"plainTextEdit_2")
         self.plainTextEdit_2.setMinimumSize(QSize(512, 470))
+        self.plainTextEdit_2.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.plainTextEdit_2.setReadOnly(True)
 
         self.verticalLayout_2.addWidget(self.plainTextEdit_2)
@@ -124,7 +209,11 @@ class Ui_MainWindow(object):
 
         self.label_3 = QLabel(self.tab_2)
         self.label_3.setObjectName(u"label_3")
+        self.label_3.setMinimumSize(QSize(0, 24))
         self.label_3.setMaximumSize(QSize(16777215, 24))
+        self.label_3.setStyleSheet(u"font: 10pt \"Bahnschrift\";\n"
+"background-color: none;\n"
+"border: none;")
         self.label_3.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_2.addWidget(self.label_3)
@@ -142,6 +231,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.plainTextEdit_4 = QPlainTextEdit(self.tab_3)
         self.plainTextEdit_4.setObjectName(u"plainTextEdit_4")
+        self.plainTextEdit_4.setFocusPolicy(Qt.FocusPolicy.ClickFocus)
 
         self.verticalLayout_3.addWidget(self.plainTextEdit_4)
 
@@ -150,12 +240,17 @@ class Ui_MainWindow(object):
         self.label_5 = QLabel(self.tab_3)
         self.label_5.setObjectName(u"label_5")
         self.label_5.setMaximumSize(QSize(16777215, 20))
+        self.label_5.setStyleSheet(u"font: 10pt \"Bahnschrift\";\n"
+"background-color: none;\n"
+"border: none;")
 
         self.horizontalLayout_2.addWidget(self.label_5)
 
         self.lineEdit = QLineEdit(self.tab_3)
         self.lineEdit.setObjectName(u"lineEdit")
         self.lineEdit.setMaximumSize(QSize(16777215, 20))
+        self.lineEdit.setStyleSheet(u"font: 10pt \"Bahnschrift\";\n"
+"background-color: rgba(255, 255, 255, 70);")
         self.lineEdit.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.horizontalLayout_2.addWidget(self.lineEdit)
@@ -168,12 +263,18 @@ class Ui_MainWindow(object):
         self.label_4 = QLabel(self.tab_3)
         self.label_4.setObjectName(u"label_4")
         self.label_4.setMaximumSize(QSize(16777215, 20))
+        self.label_4.setStyleSheet(u"font: 10pt \"Bahnschrift\";\n"
+"background-color: none;\n"
+"border: none;")
 
         self.horizontalLayout.addWidget(self.label_4)
 
         self.spinBox = QSpinBox(self.tab_3)
         self.spinBox.setObjectName(u"spinBox")
         self.spinBox.setMaximumSize(QSize(70, 20))
+        self.spinBox.setStyleSheet(u"font: 10pt \"Bahnschrift\";\n"
+"border: none;\n"
+"background-color: rgba(255, 255, 255, 70);")
         self.spinBox.setMinimum(2)
         self.spinBox.setMaximum(9999)
         self.spinBox.setValue(15)
@@ -185,7 +286,7 @@ class Ui_MainWindow(object):
 
         self.pushButton_4 = QPushButton(self.tab_3)
         self.pushButton_4.setObjectName(u"pushButton_4")
-        self.pushButton_4.setMinimumSize(QSize(0, 0))
+        self.pushButton_4.setMinimumSize(QSize(0, 25))
 
         self.verticalLayout_3.addWidget(self.pushButton_4)
 
@@ -197,7 +298,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.tabWidget.setCurrentIndex(1)
+        self.tabWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
